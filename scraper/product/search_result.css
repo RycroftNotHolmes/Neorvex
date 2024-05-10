@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-box {
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 80%;
+  float: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+}
+
+@media (min-width: 768px) {
+  .product-box {
+    width: 40%;
+  }
+}
+
+@media (min-width: 992px) {
+  .product-box {
+    width: 26.666666%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-box {
+    width: 20%;
+  }
+}
+
+.product-box:hover {
+  transform: scale(1.05);
+}
+
+.heart-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.heart-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.heart-toggle span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url('heart-outline.svg');
+  background-size: cover;
+  transition: transform 0.3s ease-out;
+}
+
+.heart-toggle input[type="checkbox"]:checked ~ span {
+  background-image: url('heart-filled.svg');
+}
+
+.product-link {
+  display: block;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-out;
+}
+
+.product-link:hover .product-image {
+  transform: scale(1.1);
+}
+
+.product-info {
+  padding: 10px;
+}
+
+.product-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-price {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}

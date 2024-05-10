@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Layout</title>
+    <link rel="stylesheet" href="search_result.css">
+</head>
+<body>
+  {% include 'header.html' %}
+  <div class="products">
+    {% for profuct in products %}
+    <div class="product-box" data-product-id="{{ product.id }}">
+      <label class="heart-toggle">
+        <input type="checkbox" data-product-id="{{ product.id }}" data-action="add-to-wishlist">
+        <span class="heart-icon"></span>
+      </label>
+      <a href="#" class="product-link">
+        <img class="product-image" src="{{ product.image }}" alt="{{ product.name }}">
+      </a>
+      <div class="product-info">
+        <h3 class="product-title">{{ product.name }}</h3>
+        <p class="product-price">${{ product.price }}</p>
+      </div>
+    </div>
+    <!-- Repeat the above code for other products -->
+    
+    <!-- End of product list -->
+  </div>
+</body>
+<script>
+
+</script>
+</html>
